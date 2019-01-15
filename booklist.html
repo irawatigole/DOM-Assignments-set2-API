@@ -1,0 +1,63 @@
+<!-- Create a webpage with an h1 of "My Book List".
+Add a script tag to the bottom of the page, where all your JS will go.
+Copy this array of books:
+  var books = [
+    {
+      title: 'The Design of EveryDay Things',
+      author: 'Don Norman',
+      alreadyRead: false
+    }, {
+      title: 'The Most Human Human',
+      author: 'Brian Christian',
+      alreadyRead: true
+    }
+  ];
+Iterate through the array of books. For each book, create a li element with the book title and author and append it to the page.
+Change the style of the background of the book listing depending on whether you have read it or not.
+Tags: DOM Code: DCT89ff Minutes: 20 Points: 20 Url: -->
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+            <div id="app">
+                    <h2> My Book List </h2>
+                    <ul id="list">
+                    
+                    </ul>
+                </div>
+        <script>
+          var books = [
+    {
+      title: 'The Design of EveryDay Things',
+      author: 'Don Norman',
+      alreadyRead: false
+    }, {
+      title: 'The Most Human Human',
+      author: 'Brian Christian',
+      alreadyRead: true
+    }
+  ];
+          let divisionHandle = document.getElementById('app');
+          let listHandle = document.getElementById('list')
+          books.forEach((book) => {
+            console.log(book)
+                let li = document.createElement('li');
+                let title = document.createTextNode(`${book.title} by `); 
+                let author = document.createTextNode(book.author)
+                li.appendChild(title);
+              
+                li.appendChild(author);
+                listHandle.appendChild(li);
+                // listHandle.appendChild(li);
+                console.log(book.alreadyRead);
+                if (book.alreadyRead == true){
+                  li.style.backgroundColor = "yellow";
+                }
+            });
+            </script>
+    </body>
+</html>

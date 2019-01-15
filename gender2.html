@@ -1,0 +1,38 @@
+<!-- In this assignment, you are supposed to work with the gender-api.com to fetch the gender of the name provided. 
+
+Given an HTML form, after the user moves away from the name field, make an ajax request to the gender-api server, based on the response received from the server, select the appropriate radio button, 
+
+If the response given back is unknown, the buttons stays as is & the user will manually select the gender
+
+Tags: hard, DOM Code: DCT2a2c Minutes: 60 Points: 50 Url:
+
+Select Theme -->
+
+<!DOCTYPE html>
+<html>
+   <head>
+       <title></title>
+</head>
+<body>
+<div id="app">
+    <h2> Sign up </h2>
+    <form id="signUpForm" >
+        <label> Name </label>
+        <input type="text" name="name" id="name" /> <br/>
+        
+        <label> Email </label>
+        <input type="text" name="email" id="email" /> <br/>
+        
+        <label> Gender </label>
+        <input type="radio" name="gender" id="male" value="male" /><label for="male">Male</label> 
+        <input type="radio" name="gender" id="female" value="female"  /> <label for="female">Female</label> <br/>
+        
+        <input type="submit" value="Sign Up" />
+    </form>
+</div>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="./js/app1.js"></script>
+</body>
+    </html>
+
+

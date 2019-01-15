@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <header>
+    <title>Table</title>
+  </header>
+  <body>   
+        <h1>Mountains</h1>
+        <div id="mountains"></div>       
+  <script>
+      const MOUNTAINS = [
+      {name: 'Kilimanjaro', height: 5895, place: 'Tanzania'},
+      {name: 'Everest', height: 8848, place: 'Nepal'},
+      {name: 'Mount Fuji', height: 3776, place: 'Japan'},
+      {name: 'Mont Blanc', height: 4808, place: 'Italy/France'}
+  ];
+  let divHandle = document.getElementById('mountains')
+  let table = document.createElement('table')
+  let tbody = document.createElement('tbody');
+    let thead = document.createElement('thead');
+    
+  for (var i=0;i<MOUNTAINS.length; i++){
+     let keys = Object.keys(MOUNTAINS[i])
+
+         for (var j=0;j<keys.length; j++){
+                if (i<1){
+            if(j<1){
+     let tr1 = document.createElement('tr');
+     let th1 = document.createElement('th');
+     let th2 = document.createElement('th');
+     let th3 = document.createElement('th');
+     let th4 = document.createElement('th');
+   
+     let heading1 = document.createTextNode('id')
+     let heading2 = document.createTextNode(keys[0]);
+     let heading3 = document.createTextNode(keys[1]);
+     let heading4 = document.createTextNode(keys[2]);
+  
+  th1.appendChild(heading1);
+  tr1.appendChild(th1);
+
+  th2.appendChild(heading2);
+  tr1.appendChild(th2);
+
+  th3.appendChild(heading3);
+  tr1.appendChild(th3);
+
+  th4.appendChild(heading4);
+  tr1.appendChild(th4);
+
+  thead.appendChild(tr1);
+  table.appendChild(thead);
+       }     
+     }
+  }
+  
+   let tr2 = document.createElement('tr');
+   let td1 = document.createElement('td');
+    let id = document.createTextNode(i+1)
+    td1.appendChild(id);
+    tr2.appendChild(td1);
+
+    let td2 = document.createElement('td');
+    let name = document.createTextNode(MOUNTAINS[i].name)
+    td2.appendChild(name);
+    tr2.appendChild(td2);
+   
+    let td3 = document.createElement('td');
+    let height = document.createTextNode(MOUNTAINS[i].height)
+    td3.appendChild(height);
+    tr2.appendChild(td3);
+    
+    let td4 = document.createElement('td');
+    let place = document.createTextNode(MOUNTAINS[i].place)
+    td4.appendChild(place);
+    tr2.appendChild(td4);
+    tbody.appendChild(tr2);
+    table.appendChild(tbody);
+    divHandle.appendChild(table)
+      table.setAttribute("border", "1");
+      }
+      
+      </script>
+  </body>
+</html>
+
